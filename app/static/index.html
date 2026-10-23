@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>سامانه اطلاعات پرسنل</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-icon">
+    <img src="/static/images/logo.png" alt="لوگوی شرکت">
+</div>
+            <div>
+                <h1>سامانه پرسنل</h1>
+                <p>مدیریت و مشاهده اطلاعات کارکنان</p>
+            </div>
+        </div>
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            سیستم اطلاعات پرسنل
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <span class="eyebrow">EMPLOYEE DIRECTORY</span>
+            <h2>جست‌وجوی اطلاعات پرسنل</h2>
+            <p>
+                کد پرسنلی موردنظر را وارد کنید تا اطلاعات ثبت‌شده
+                در سامانه نمایش داده شود.
+            </p>
+        </section>
+
+        <section class="search-card">
+            <label for="p-code">کد پرسنلی</label>
+
+            <form id="search-form">
+                <div class="search-row">
+                    <div class="input-wrapper">
+                        <span class="input-icon">⌕</span>
+                        <input
+                            type="text"
+                            id="p-code"
+                            placeholder="مثلاً 1002"
+                            autocomplete="off"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" id="search-button">
+                        <span id="button-text">جست‌وجو</span>
+                    </button>
+                </div>
+            </form>
+
+            <p class="hint">
+                کد پرسنلی را مطابق اطلاعات ثبت‌شده در دیتابیس وارد کنید.
+            </p>
+
+            <div id="message" class="message" role="status" hidden></div>
+        </section>
+
+        <section id="employee-section" hidden>
+            <div class="section-heading">
+                <div>
+                    <h2>مشخصات پرسنل</h2>
+                    <p>اطلاعات دریافت‌شده از پایگاه داده</p>
+                </div>
+
+                <span class="record-badge">رکورد یافت شد</span>
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar" id="avatar">پ</div>
+
+                    <div class="profile-title">
+                        <h3 id="full-name">—</h3>
+                        <p>
+                            کد پرسنلی:
+                            <strong id="employee-code">—</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="detail-label">شناسه رکورد</span>
+                        <strong id="employee-id">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">نام</span>
+                        <strong id="first-name">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">نام خانوادگی</span>
+                        <strong id="last-name">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">جنسیت</span>
+                        <strong id="sex">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">کد ملی</span>
+                        <strong id="nid">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">تاریخ تولد</span>
+                        <strong id="birth-date">—</strong>
+                    </div>
+                </div>
+
+                <div class="profile-footer">
+                    <span class="footer-dot"></span>
+                    اطلاعات از دیتابیس SQL Server دریافت شده است.
+                </div>
+            </div>
+
+            <div class="actions">
+                <button type="button" id="clear-button" class="secondary-button">
+                    جست‌وجوی جدید
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>سامانه اطلاعات پرسنل | توسعه‌یافته با FastAPI و SQL Server</p>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
